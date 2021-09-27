@@ -1,16 +1,61 @@
-# This is a sample Python script.
+from Film import Film
+from Personnage import Personnage
+from Gentil import Gentil
+from Mechant import Mechant
+from Acteur import  Acteur
+# Exercice 1 -a
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+film = Film("Star Wars épideode IV : Un nouvel espoir de George Lucas",1977,10000000,2000000,5)
+film2 = Film("Star Wars épideode I : La menace fantôme de George Lucas",1999,10000000,2000000,5)
+
+#Exercie 1 -b
+"""
+titre = input("Nom du film : \n")
+annee = input("Année de sortie : \n")
+numéroDepisode = input("Numéro depisode : \n")
+cout = input("cout : \n")
+recette = input("recette : \n")
+
+film = Film(titre,int(annee),int(cout),int(recette),int(numéroDepisode))
+print(film.__str__())
+"""
+
+#Exercice 3,4,5,6,7
+"""
+personnage = Personnage("i","v")
+gentil = Gentil("heelo","worl",True)
+mechant = Mechant("eee","fdfd",True)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+liste = [personnage,gentil,mechant]
+
+for i in liste:
+    print(i)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+"""
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#Exercice 8
+
+acteur = Acteur("bar","rer")
+acteur2 = Acteur("ar","rer")
+gentil = Gentil("heelo","worl",True)
+mechant = Mechant("eee","fdfd",True)
+mechant2 = Mechant("df","fdfd",True)
+acteur.set_personnage(gentil)
+acteur.set_personnage(mechant)
+acteur.set_personnage(mechant2)
+#print(acteur.nbPersonnages())
+film.set_Acteurs(acteur)
+film.set_Acteurs(acteur2)
+print(film.nbPersonnages())
+p= film.tri()
+for i in p:
+    print(i)
+
+fiche = {film.get_annee():film, film2.get_annee():film2}
+def makeBackUp(film:dict):
+    for cle,valeur in film.items():
+        print(cle,valeur)
+
+makeBackUp(fiche)
