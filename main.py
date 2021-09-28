@@ -5,8 +5,8 @@ from Mechant import Mechant
 from Acteur import  Acteur
 # Exercice 1 -a
 
-film = Film("Star Wars épideode IV : Un nouvel espoir de George Lucas",1977,10000000,2000000,5)
-film2 = Film("Star Wars épideode I : La menace fantôme de George Lucas",1999,10000000,2000000,5)
+film = Film("Star Wars épideode IV : Un nouvel espoir de George Lucas",1977,10000000,20000000,5)
+film2 = Film("Star Wars épideode I : La menace fantôme de George Lucas",1999,10000000,20000000,5)
 
 #Exercie 1 -b
 """
@@ -56,6 +56,7 @@ for i in p:
 fiche = {film.get_annee():film, film2.get_annee():film2}
 def makeBackUp(film:dict):
     for cle,valeur in film.items():
-        print(cle,valeur)
+        p,f = valeur.calculBenefice()
+        print(cle," - ",valeur.get_titre()," - ",p)
 
 makeBackUp(fiche)
